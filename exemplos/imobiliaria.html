@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Horizonte Imóveis | Exemplo de landing page · Lima Digital</title>
+<meta name="description" content="Exemplo de landing page para imobiliária criado pela Lima Digital. Empresa fictícia.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+  :root { --tinta: #1B2B2E; --verde: #1F5C4A; --verde-escuro: #143E32; --areia: #EDE6D8; --areia-2: #F6F2EA; --branco: #FFFFFF; --cinza: #5B6B6E; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: 'Figtree', Arial, sans-serif; color: var(--tinta); background: var(--branco); font-size: 18px; line-height: 1.6; }
+  h1, h2, h3 { font-family: 'Young Serif', Georgia, serif; font-weight: 400; margin: 0; line-height: 1.12; }
+  p { margin: 0; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid #D9902F; outline-offset: 3px; }
+  .w { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+  .demo { background: #0F0F10; color: #F3F1EC; font-size: 14px; }
+  .demo .w { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 20px; min-height: 44px; padding-top: 6px; padding-bottom: 6px; }
+  .demo b { color: #F26B1D; }
+  .demo a { font-weight: 700; color: #F3F1EC; }
+
+  header .w { display: flex; align-items: center; justify-content: space-between; height: 80px; gap: 16px; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: 'Young Serif', serif; font-size: 22px; }
+  .logo svg { flex: none; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 0 24px; border-radius: 99px; font-weight: 700; font-size: 17px; text-decoration: none; border: 2px solid transparent; }
+  .btn-verde { background: var(--verde); color: #fff; }
+  .btn-verde:hover { background: var(--verde-escuro); }
+  .btn-linha { border-color: var(--tinta); }
+  .btn-linha:hover { background: var(--tinta); color: #fff; }
+
+  .hero { padding: 48px 0 88px; }
+  .hero .w { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .hero h1 { font-size: clamp(42px, 5.4vw, 68px); }
+  .hero p { margin-top: 22px; font-size: 20px; color: var(--cinza); max-width: 30em; }
+  .hero .acoes { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px; }
+  .hero-img { border-radius: 28px; overflow: hidden; aspect-ratio: 1 / 1; }
+  .hero-img svg { width: 100%; height: 100%; display: block; }
+
+  .filtros { background: var(--areia-2); padding: 28px 0; }
+  .filtros .w { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .filtros span { font-weight: 700; margin-right: 8px; }
+  .chip { border: 1px solid #CFC6B3; background: #fff; border-radius: 99px; padding: 8px 18px; font-size: 16px; }
+
+  section { padding: 96px 0; }
+  .titulo { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 40px; }
+  .titulo h2 { font-size: clamp(34px, 4vw, 48px); }
+  .titulo p { color: var(--cinza); max-width: 28em; }
+
+  .imoveis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  .imovel { border: 1px solid #E3DCCD; border-radius: 20px; overflow: hidden; background: #fff; display: flex; flex-direction: column; }
+  .imovel .foto { aspect-ratio: 4 / 3; position: relative; }
+  .imovel .foto svg { width: 100%; height: 100%; display: block; }
+  .tag { position: absolute; top: 14px; left: 14px; background: #fff; border-radius: 99px; padding: 4px 12px; font-size: 14px; font-weight: 700; }
+  .imovel .info { padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 6px; }
+  .imovel h3 { font-size: 24px; }
+  .imovel .local { color: var(--cinza); font-size: 16px; }
+  .imovel .dados { display: flex; gap: 16px; font-size: 15px; color: var(--cinza); margin-top: 6px; }
+  .imovel .preco { font-weight: 700; font-size: 22px; margin-top: 10px; }
+
+  .aereo { background: var(--verde-escuro); color: #F1EFE8; }
+  .aereo .w { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .aereo h2 { font-size: clamp(34px, 4vw, 50px); }
+  .aereo p { margin-top: 18px; color: #C9D6CF; }
+  .aereo ul { margin: 24px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .aereo li { padding-left: 28px; position: relative; }
+  .aereo li::before { content: ""; position: absolute; left: 0; top: 10px; width: 14px; height: 2px; background: #D9902F; }
+  .aereo .quadro { border-radius: 24px; overflow: hidden; aspect-ratio: 4 / 3; }
+  .aereo .quadro svg { width: 100%; height: 100%; display: block; }
+
+  .porque { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
+  .porque h3 { font-size: 26px; }
+  .porque p { margin-top: 10px; color: var(--cinza); }
+
+  .contato { background: var(--areia); }
+  .contato .w { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+  .contato h2 { font-size: clamp(34px, 4vw, 50px); }
+  .contato .w > div > p { margin-top: 16px; color: var(--cinza); }
+  form { background: #fff; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 16px; }
+  label { font-weight: 600; font-size: 16px; display: flex; flex-direction: column; gap: 6px; }
+  input, select { font: inherit; font-size: 17px; padding: 12px 14px; border-radius: 12px; border: 1px solid #CFC6B3; min-height: 48px; color: var(--tinta); background: #fff; }
+  .nota { font-size: 14px; color: var(--cinza); }
+
+  footer { padding: 32px 0; font-size: 15px; color: var(--cinza); }
+  footer .w { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+
+  @media (max-width: 900px) {
+    .hero .w, .aereo .w, .contato .w { grid-template-columns: 1fr; gap: 40px; }
+    .imoveis { grid-template-columns: 1fr 1fr; }
+    .porque { grid-template-columns: 1fr; gap: 28px; }
+  }
+  @media (max-width: 600px) {
+    section { padding: 64px 0; }
+    .imoveis { grid-template-columns: 1fr; }
+    header .btn { display: none; }
+    .hero .acoes .btn { width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="demo" role="note">
+  <div class="w">
+    <span><b>Exemplo</b> criado pela Lima Digital. A Horizonte Imóveis é uma empresa fictícia.</span>
+    <a href="../index.html#exemplos">Voltar para a Lima Digital</a>
+  </div>
+</div>
+
+<header>
+  <div class="w">
+    <a class="logo" href="#">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="17" fill="#1F5C4A"/><path d="M5 22h24" stroke="#EDE6D8" stroke-width="2"/><path d="M10 22a7 7 0 0 1 14 0" fill="#D9902F"/></svg>
+      Horizonte Imóveis
+    </a>
+    <a class="btn btn-verde" href="#contato">Falar com o corretor</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" style="padding-top:48px">
+  <div class="w">
+    <div>
+      <h1>Sua casa em Nova Iguaçu, vista de todos os ângulos.</h1>
+      <p>Casas e apartamentos na Baixada Fluminense com fotos profissionais, vista aérea e atendimento direto com o corretor no WhatsApp.</p>
+      <div class="acoes">
+        <a class="btn btn-verde" href="#imoveis">Ver imóveis</a>
+        <a class="btn btn-linha" href="#contato">Quero vender meu imóvel</a>
+      </div>
+    </div>
+    <div class="hero-img" role="img" aria-label="Ilustração de uma casa com piscina vista de cima">
+      <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="400" height="400" fill="#6E8F5B"/>
+        <rect x="0" y="300" width="400" height="100" fill="#8A8172"/>
+        <rect x="40" y="40" width="190" height="150" fill="#B5583A"/>
+        <path d="M40 40 L135 115 L230 40 M40 190 L135 115 L230 190" stroke="#8F3F27" stroke-width="3" fill="none"/>
+        <rect x="250" y="70" width="110" height="170" rx="6" fill="#E9E3D6"/>
+        <rect x="265" y="90" width="80" height="120" rx="10" fill="#3FB3CF"/>
+        <circle cx="80" cy="250" r="26" fill="#4C6E3C"/><circle cx="160" cy="262" r="18" fill="#4C6E3C"/>
+        <rect x="190" y="200" width="40" height="100" fill="#D8CFBE"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="filtros">
+  <div class="w"><span>Buscar por:</span><span class="chip">Nova Iguaçu</span><span class="chip">Belford Roxo</span><span class="chip">Mesquita</span><span class="chip">Com piscina</span><span class="chip">Até 3 quartos</span></div>
+</div>
+
+<section id="imoveis">
+  <div class="w">
+    <div class="titulo">
+      <h2>Imóveis em destaque</h2>
+      <p>Todos com fotos profissionais e vídeo aéreo para você conhecer antes da visita.</p>
+    </div>
+    <div class="imoveis">
+      <article class="imovel">
+        <div class="foto"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#7C9A66"/><rect x="40" y="40" width="200" height="140" fill="#B5583A"/><path d="M40 40 L140 110 L240 40 M40 180 L140 110 L240 180" stroke="#8F3F27" stroke-width="3" fill="none"/><rect x="270" y="60" width="90" height="140" rx="8" fill="#3FB3CF"/></svg><span class="tag">Venda</span></div>
+        <div class="info"><h3>Casa com piscina</h3><span class="local">Jardim Tropical, Nova Iguaçu</span><span class="dados"><span>3 quartos</span><span>180 m²</span><span>2 vagas</span></span><span class="preco">R$ 650.000</span></div>
+      </article>
+      <article class="imovel">
+        <div class="foto"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#9AA39A"/><rect x="60" y="30" width="280" height="240" fill="#E2DCCF"/><g fill="#B9C6CC"><rect x="80" y="50" width="70" height="60"/><rect x="165" y="50" width="70" height="60"/><rect x="250" y="50" width="70" height="60"/><rect x="80" y="125" width="70" height="60"/><rect x="165" y="125" width="70" height="60"/><rect x="250" y="125" width="70" height="60"/></g><rect x="170" y="200" width="60" height="70" fill="#1F5C4A"/></svg><span class="tag">Aluguel</span></div>
+        <div class="info"><h3>Apartamento 2 quartos</h3><span class="local">Centro, Belford Roxo</span><span class="dados"><span>2 quartos</span><span>64 m²</span><span>1 vaga</span></span><span class="preco">R$ 1.400/mês</span></div>
+      </article>
+      <article class="imovel">
+        <div class="foto"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#8BA36F"/><rect x="30" y="200" width="340" height="40" fill="#A99C82"/><rect x="70" y="50" width="150" height="120" fill="#C9785A"/><path d="M70 50 L145 110 L220 50" stroke="#9C5440" stroke-width="3" fill="none"/><circle cx="290" cy="90" r="40" fill="#5E7F49"/><circle cx="320" cy="150" r="24" fill="#5E7F49"/></svg><span class="tag">Venda</span></div>
+        <div class="info"><h3>Sítio com área verde</h3><span class="local">Tinguá, Nova Iguaçu</span><span class="dados"><span>4 quartos</span><span>2.000 m²</span><span>Pomar</span></span><span class="preco">R$ 480.000</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="aereo">
+  <div class="w">
+    <div class="quadro" role="img" aria-label="Ilustração de um terreno visto de cima por drone">
+      <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#5E7F49"/><path d="M0 220 Q200 180 400 230 L400 300 L0 300 Z" fill="#7A6E5C"/><rect x="120" y="60" width="160" height="110" fill="#B5583A"/><path d="M120 60 L200 115 L280 60" stroke="#8F3F27" stroke-width="3" fill="none"/><circle cx="60" cy="80" r="30" fill="#4C6E3C"/><circle cx="340" cy="110" r="36" fill="#4C6E3C"/><g stroke="#FFFFFF" stroke-width="3" fill="none"><path d="M20 20h30M20 20v30M380 20h-30M380 20v30M20 280h30M20 280v-30M380 280h-30M380 280v-30"/></g></svg>
+    </div>
+    <div>
+      <h2>Veja de cima antes de visitar</h2>
+      <p>Cada imóvel tem vídeo feito com drone. Você vê o tamanho do terreno, a rua e o que tem por perto sem sair de casa.</p>
+      <ul>
+        <li>Tamanho real do terreno e do quintal</li>
+        <li>Acesso, rua e vizinhança</li>
+        <li>Distância até comércio, escola e transporte</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="w">
+    <div class="titulo"><h2>Por que comprar com a Horizonte</h2></div>
+    <div class="porque">
+      <div><h3>Corretor de verdade</h3><p>Você fala direto com quem conhece o imóvel, pelo WhatsApp, sem robô.</p></div>
+      <div><h3>Documentação conferida</h3><p>Antes de anunciar, a documentação é revisada para a compra não travar no cartório.</p></div>
+      <div><h3>Visita marcada na hora</h3><p>Escolha o dia e o horário e receba a localização no celular.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contato" id="contato">
+  <div class="w">
+    <div>
+      <h2>Fale com um corretor</h2>
+      <p>Conte o que você procura. Respondemos no mesmo dia pelo WhatsApp.</p>
+    </div>
+    <form onsubmit="event.preventDefault(); this.querySelector('.nota').textContent = 'Este é um formulário de demonstração: nada foi enviado.';">
+      <label>Nome<input type="text" autocomplete="name"></label>
+      <label>WhatsApp<input type="tel" autocomplete="tel"></label>
+      <label>Você quer
+        <select><option>Comprar</option><option>Alugar</option><option>Vender meu imóvel</option></select>
+      </label>
+      <button class="btn btn-verde" type="submit">Quero ser atendido</button>
+      <p class="nota" aria-live="polite">Formulário de demonstração.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="w"><span>Horizonte Imóveis · empresa fictícia</span><span>Site de exemplo feito pela <a href="../index.html">Lima Digital</a></span></div>
+</footer>
+
+</body>
+</html>

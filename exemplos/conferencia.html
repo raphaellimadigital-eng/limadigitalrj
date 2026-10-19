@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conferência Renovo | Exemplo de landing page · Lima Digital</title>
+<meta name="description" content="Exemplo de landing page para evento de igreja criado pela Lima Digital. Evento fictício.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Nunito+Sans:wght@400;600;700&display=swap">
+<style>
+  :root { --fundo: #1E1630; --fundo-2: #2A2042; --texto: #F4EEF8; --suave: #C9BEDA; --ouro: #F2B544; --ouro-2: #FFC861; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--fundo); color: var(--texto); font-family: 'Nunito Sans', Arial, sans-serif; font-size: 18px; line-height: 1.6; }
+  h1, h2, h3 { font-family: 'Unbounded', Arial, sans-serif; margin: 0; line-height: 1.05; }
+  p { margin: 0; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--ouro); outline-offset: 3px; }
+  .w { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+  .demo { background: #0F0F10; color: #F3F1EC; font-size: 14px; }
+  .demo .w { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 20px; min-height: 44px; padding-top: 6px; padding-bottom: 6px; }
+  .demo b { color: #F26B1D; }
+  .demo a { font-weight: 700; }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 30px; border-radius: 99px; font-weight: 700; font-size: 17px; text-decoration: none; border: 2px solid transparent; cursor: pointer; font-family: inherit; }
+  .btn-ouro { background: var(--ouro); color: #1E1630; }
+  .btn-ouro:hover { background: var(--ouro-2); }
+  .btn-linha { border-color: #6A5B88; }
+  .btn-linha:hover { border-color: var(--texto); }
+
+  .hero { position: relative; overflow: hidden; padding: 72px 0 104px; }
+  .hero .luz { position: absolute; right: -160px; top: -120px; width: 620px; height: 620px; border-radius: 50%; border: 2px solid rgba(242, 181, 68, 0.35); }
+  .hero .luz::before { content: ""; position: absolute; inset: 70px; border-radius: 50%; border: 2px solid rgba(242, 181, 68, 0.22); }
+  .hero .luz::after { content: ""; position: absolute; inset: 160px; border-radius: 50%; background: rgba(242, 181, 68, 0.14); }
+  .hero .w { position: relative; }
+  .data { display: inline-flex; flex-wrap: wrap; gap: 6px 18px; font-weight: 700; color: var(--ouro); font-size: 17px; }
+  .hero h1 { margin-top: 24px; font-size: clamp(46px, 8vw, 104px); font-weight: 800; text-transform: uppercase; max-width: 9.5em; letter-spacing: -0.02em; }
+  .hero p { margin-top: 26px; max-width: 32em; font-size: 20px; color: var(--suave); }
+  .hero .acoes { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 14px; }
+
+  section { padding: 96px 0; }
+  .claro { background: var(--fundo-2); }
+  h2 { font-size: clamp(32px, 4.4vw, 52px); font-weight: 700; }
+  .intro { margin-top: 16px; color: var(--suave); max-width: 34em; }
+
+  .programa { margin: 48px 0 0; padding: 0; list-style: none; border-top: 1px solid #4A3D66; }
+  .programa li { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 24px; padding: 22px 0; border-bottom: 1px solid #4A3D66; }
+  .programa time { font-family: 'Unbounded', sans-serif; font-weight: 700; color: var(--ouro); font-size: 20px; }
+  .programa h3 { font-size: 22px; font-weight: 500; }
+  .programa p { color: var(--suave); margin-top: 4px; }
+
+  .info { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 44px; }
+  .info div { border: 1px solid #4A3D66; border-radius: 20px; padding: 26px; }
+  .info h3 { font-size: 18px; font-weight: 700; color: var(--ouro); }
+  .info p { margin-top: 10px; }
+
+  .inscricao .w { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+  form { background: var(--texto); color: #1E1630; border-radius: 24px; padding: 30px; display: flex; flex-direction: column; gap: 16px; }
+  label { font-weight: 700; font-size: 16px; display: flex; flex-direction: column; gap: 6px; }
+  input, select { font: inherit; font-size: 17px; padding: 12px 14px; border-radius: 12px; border: 1px solid #BFB3D2; min-height: 48px; color: #1E1630; background: #fff; }
+  .nota { font-size: 14px; color: #5D4F78; }
+
+  footer { padding: 32px 0; font-size: 15px; color: var(--suave); border-top: 1px solid #3A2E55; }
+  footer .w { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+
+  @media (max-width: 860px) {
+    .info { grid-template-columns: 1fr; }
+    .inscricao .w { grid-template-columns: 1fr; gap: 36px; }
+  }
+  @media (max-width: 600px) {
+    section { padding: 64px 0; }
+    .hero { padding: 48px 0 72px; }
+    .hero .luz { width: 380px; height: 380px; right: -180px; top: -80px; }
+    .programa li { grid-template-columns: 1fr; gap: 6px; }
+    .hero .acoes .btn { width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="demo" role="note">
+  <div class="w">
+    <span><b>Exemplo</b> criado pela Lima Digital. A Conferência Renovo é um evento fictício.</span>
+    <a href="../index.html#exemplos">Voltar para a Lima Digital</a>
+  </div>
+</div>
+
+<main>
+<section class="hero">
+  <div class="luz" aria-hidden="true"></div>
+  <div class="w">
+    <div class="data"><span>Sábado, 13 de março</span><span>8h às 18h</span><span>Nova Iguaçu · RJ</span></div>
+    <h1>Conferência Renovo</h1>
+    <p>Um dia inteiro de louvor, palavra e comunhão para jovens e famílias. Entrada gratuita com inscrição.</p>
+    <div class="acoes">
+      <a class="btn btn-ouro" href="#inscricao">Fazer minha inscrição</a>
+      <a class="btn btn-linha" href="#programacao">Ver programação</a>
+    </div>
+  </div>
+</section>
+
+<section class="claro" id="programacao">
+  <div class="w">
+    <h2>Programação</h2>
+    <p class="intro">Horários sujeitos a pequenos ajustes. A programação final sai uma semana antes no Instagram da igreja.</p>
+    <ol class="programa">
+      <li><time>8h</time><div><h3>Credenciamento e café</h3><p>Retire sua pulseira na entrada com o nome da inscrição.</p></div></li>
+      <li><time>9h</time><div><h3>Abertura com louvor</h3><p>Ministério de louvor da igreja anfitriã.</p></div></li>
+      <li><time>10h30</time><div><h3>Palavra: recomeços</h3><p>Ministração do pastor convidado.</p></div></li>
+      <li><time>12h30</time><div><h3>Almoço</h3><p>Praça de alimentação no local.</p></div></li>
+      <li><time>14h</time><div><h3>Oficinas</h3><p>Jovens, casais e ministério infantil, em salas separadas.</p></div></li>
+      <li><time>16h30</time><div><h3>Culto de encerramento</h3><p>Louvor, palavra e oração por todos os participantes.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="w">
+    <h2>Informações</h2>
+    <div class="info">
+      <div><h3>Local</h3><p>[Nome da igreja]<br>[Endereço], Nova Iguaçu</p></div>
+      <div><h3>Crianças</h3><p>Espaço kids com monitores das 9h às 17h, para crianças de 3 a 10 anos.</p></div>
+      <div><h3>Fotos do evento</h3><p>O evento terá cobertura de foto e drone. As fotos saem no Instagram da igreja.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="claro inscricao" id="inscricao">
+  <div class="w">
+    <div>
+      <h2>Garanta sua vaga</h2>
+      <p class="intro">As vagas são limitadas pelo espaço do templo. Faça sua inscrição e receba a confirmação no WhatsApp.</p>
+    </div>
+    <form onsubmit="event.preventDefault(); this.querySelector('.nota').textContent = 'Este é um formulário de demonstração: nenhuma inscrição foi feita.';">
+      <label>Nome completo<input type="text" autocomplete="name"></label>
+      <label>WhatsApp<input type="tel" autocomplete="tel"></label>
+      <label>Quantas pessoas vêm com você?
+        <select><option>Só eu</option><option>2 pessoas</option><option>3 pessoas</option><option>4 ou mais</option></select>
+      </label>
+      <button class="btn btn-ouro" type="submit">Confirmar inscrição</button>
+      <p class="nota" aria-live="polite">Formulário de demonstração.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="w"><span>Conferência Renovo · evento fictício</span><span>Site de exemplo feito pela <a href="../index.html">Lima Digital</a></span></div>
+</footer>
+
+</body>
+</html>

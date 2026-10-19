@@ -1,0 +1,27 @@
+FOTOS DO SITE DA LIMA DIGITAL
+=============================
+
+Coloque nesta pasta as fotos com EXATAMENTE estes nomes.
+Enquanto uma foto não estiver aqui, o site mostra um bloco escuro no lugar (não quebra).
+
+Abertura
+  hero-drone.jpg            Sua melhor foto de drone, na vertical (ex.: 900 x 1100 px)
+
+Galeria "Fotografia, drone e eventos"
+  galeria-drone.jpg         Drone · imóvel (vertical) — pode ser a casa com piscina do site antigo
+  galeria-corporativo.jpg   Evento corporativo
+  galeria-igreja.jpg        Evento de igreja
+  galeria-empresa.jpg       Fotografia para empresa (horizontal)
+
+Clientes (logos quadrados, fundo branco ou transparente)
+  cliente-cti.png
+  cliente-fla-sao-jose.png
+  cliente-ele-reina.png
+
+Compartilhamento (aparece quando mandam o link no WhatsApp)
+  compartilhar.jpg          1200 x 630 px, com o logo LD e uma foto de drone
+
+Dicas
+  - Os logos e a foto do drone já estão no projeto antigo da Vercel: copie de lá.
+  - Exporte em JPG ou WebP com até 300 KB por foto para o site carregar rápido.
+  - Só use fotos de clientes com autorização (e termo do responsável quando aparecer menor de idade).
