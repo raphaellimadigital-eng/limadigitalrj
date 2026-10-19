@@ -57,8 +57,7 @@ p { margin: 0; }
 .topo { position: sticky; top: 0; z-index: 50; background: rgba(15, 15, 16, 0.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--linha); }
 .topo-in { max-width: var(--largura); margin: 0 auto; padding: 0 24px; height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .marca { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.marca-ld { font-family: var(--titulo); font-weight: 800; font-size: 34px; line-height: 1; letter-spacing: -0.03em; }
-.marca-ld .l { color: var(--laranja); }
+.marca-ld { display: block; height: 34px; width: auto; }
 .marca-nome { font-family: var(--titulo); font-weight: 700; font-size: 17px; letter-spacing: 0.2em; text-transform: uppercase; }
 .menu { display: flex; align-items: center; gap: 28px; }
 .menu a:not(.btn) { text-decoration: none; font-weight: 600; font-size: 16px; color: #D8D6D1; }
@@ -182,7 +181,7 @@ p { margin: 0; }
 /* Rodapé */
 .rodape { border-top: 1px solid var(--linha); padding: 32px 0 40px; }
 .rodape-in { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px; color: var(--cinza); font-size: 15px; }
-.rodape-in .marca-ld { color: var(--gelo); font-size: 28px; }
+.rodape-in .marca-ld { height: 28px; }
 
 .whats-flutuante { position: fixed; right: 20px; bottom: 20px; z-index: 60; width: 60px; height: 60px; border-radius: 50%; background: #1FAF5A; color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45); }
 .whats-flutuante:hover { background: #24C466; }
