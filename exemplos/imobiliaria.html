@@ -3,103 +3,155 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Horizonte Imóveis | Exemplo de landing page · Lima Digital</title>
-<meta name="description" content="Exemplo de landing page para imobiliária criado pela Lima Digital. Empresa fictícia.">
+<title>Casa com piscina no Recreio | Horizonte Imóveis · exemplo Lima Digital</title>
+<meta name="description" content="Exemplo de landing page de imóvel criado pela Lima Digital. Empresa e anúncio fictícios.">
 <meta name="robots" content="noindex">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
 <style>
-  :root { --tinta: #1B2B2E; --verde: #1F5C4A; --verde-escuro: #143E32; --areia: #EDE6D8; --areia-2: #F6F2EA; --branco: #FFFFFF; --cinza: #5B6B6E; }
+  :root {
+    --tinta: #0F1F1B; --verde: #0E5E4A; --verde-2: #0A4637; --menta: #E6EFEB; --linha: #DCE5E1;
+    --cinza: #52615D; --sol: #F4B860; --branco: #FFFFFF; --raio: 28px;
+  }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   body { margin: 0; font-family: 'Figtree', Arial, sans-serif; color: var(--tinta); background: var(--branco); font-size: 18px; line-height: 1.6; }
-  h1, h2, h3 { font-family: 'Young Serif', Georgia, serif; font-weight: 400; margin: 0; line-height: 1.12; }
+  h1, h2, h3 { font-family: 'Bricolage Grotesque', 'Arial', sans-serif; margin: 0; line-height: 1.02; letter-spacing: -0.02em; }
   p { margin: 0; }
   a { color: inherit; }
-  :focus-visible { outline: 3px solid #D9902F; outline-offset: 3px; }
-  .w { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+  img { display: block; max-width: 100%; }
+  :focus-visible { outline: 3px solid var(--sol); outline-offset: 3px; }
+  .w { max-width: 1240px; margin: 0 auto; padding: 0 20px; }
 
   .demo { background: #0F0F10; color: #F3F1EC; font-size: 14px; }
-  .demo .w { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 20px; min-height: 44px; padding-top: 6px; padding-bottom: 6px; }
-  .demo b { color: #F26B1D; }
-  .demo a { font-weight: 700; color: #F3F1EC; }
+  .demo .w { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 20px; min-height: 42px; padding-top: 6px; padding-bottom: 6px; }
+  .demo b { color: #FE6A00; }
+  .demo a { font-weight: 700; }
 
-  header .w { display: flex; align-items: center; justify-content: space-between; height: 80px; gap: 16px; }
-  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: 'Young Serif', serif; font-size: 22px; }
-  .logo svg { flex: none; }
-  .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 0 24px; border-radius: 99px; font-weight: 700; font-size: 17px; text-decoration: none; border: 2px solid transparent; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; padding: 0 26px; border-radius: 99px; font: 700 17px 'Figtree', sans-serif; text-decoration: none; border: 0; cursor: pointer; transition: background-color .15s, transform .15s; }
   .btn-verde { background: var(--verde); color: #fff; }
-  .btn-verde:hover { background: var(--verde-escuro); }
-  .btn-linha { border-color: var(--tinta); }
-  .btn-linha:hover { background: var(--tinta); color: #fff; }
+  .btn-verde:hover { background: var(--verde-2); }
+  .btn-sol { background: var(--sol); color: var(--tinta); }
+  .btn-sol:hover { background: #F7C67C; }
+  .btn-claro { background: #fff; color: var(--tinta); }
 
-  .hero { padding: 48px 0 88px; }
-  .hero .w { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
-  .hero h1 { font-size: clamp(42px, 5.4vw, 68px); }
-  .hero p { margin-top: 22px; font-size: 20px; color: var(--cinza); max-width: 30em; }
-  .hero .acoes { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px; }
-  .hero-img { border-radius: 28px; overflow: hidden; aspect-ratio: 1 / 1; }
-  .hero-img svg { width: 100%; height: 100%; display: block; }
+  /* Navegação flutuante */
+  .nav { position: sticky; top: 12px; z-index: 40; margin-top: 12px; }
+  .nav-in { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 8px 8px 8px 22px; border-radius: 99px; background: rgba(255,255,255,0.86); backdrop-filter: blur(14px); border: 1px solid var(--linha); box-shadow: 0 10px 30px rgba(15,31,27,0.08); width: calc(100% - 40px); }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 21px; letter-spacing: -0.02em; }
+  .nav-links { display: flex; gap: 26px; font-weight: 600; font-size: 16px; }
+  .nav-links a { text-decoration: none; color: var(--cinza); }
+  .nav-links a:hover { color: var(--tinta); }
+  .nav .btn { min-height: 46px; }
 
-  .filtros { background: var(--areia-2); padding: 28px 0; }
-  .filtros .w { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-  .filtros span { font-weight: 700; margin-right: 8px; }
-  .chip { border: 1px solid #CFC6B3; background: #fff; border-radius: 99px; padding: 8px 18px; font-size: 16px; }
+  /* Abertura */
+  .hero { padding-top: 16px; }
+  .hero-foto { position: relative; border-radius: var(--raio); overflow: hidden; min-height: min(78vh, 760px); display: flex; align-items: flex-end; color: #fff; isolation: isolate; }
+  .hero-foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; z-index: -2; }
+  .hero-foto::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(10,25,21,0.30) 0%, rgba(10,25,21,0.55) 45%, rgba(10,25,21,0.88) 100%); }
+  .hero-conteudo { width: 100%; padding: 40px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 28px; }
+  .selo { display: inline-flex; gap: 8px; align-items: center; background: rgba(255,255,255,0.18); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.35); padding: 6px 14px; border-radius: 99px; font-size: 15px; font-weight: 600; }
+  .selo i { width: 8px; height: 8px; border-radius: 50%; background: #5BE3A6; }
+  .hero h1 { text-shadow: 0 2px 24px rgba(0,0,0,0.35); margin-top: 18px; font-size: clamp(44px, 7.2vw, 100px); font-weight: 800; max-width: 9.5em; }
+  .hero p { margin-top: 14px; font-size: 19px; color: rgba(255,255,255,0.88); max-width: 34em; }
+  .preco { background: rgba(255,255,255,0.14); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.3); border-radius: 22px; padding: 20px 22px; display: flex; flex-direction: column; gap: 12px; min-width: 260px; }
+  .preco small { font-size: 14px; color: rgba(255,255,255,0.8); }
+  .preco strong { font-family: 'Bricolage Grotesque', sans-serif; font-size: 40px; line-height: 1; letter-spacing: -0.02em; }
 
-  section { padding: 96px 0; }
-  .titulo { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 40px; }
-  .titulo h2 { font-size: clamp(34px, 4vw, 48px); }
-  .titulo p { color: var(--cinza); max-width: 28em; }
+  .fatos { margin-top: 16px; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+  .fato { background: var(--menta); border-radius: 20px; padding: 18px 20px; display: flex; flex-direction: column; gap: 2px; }
+  .fato b { font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; letter-spacing: -0.02em; line-height: 1.1; }
+  .fato span { font-size: 15px; color: var(--cinza); }
 
-  .imoveis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
-  .imovel { border: 1px solid #E3DCCD; border-radius: 20px; overflow: hidden; background: #fff; display: flex; flex-direction: column; }
-  .imovel .foto { aspect-ratio: 4 / 3; position: relative; }
-  .imovel .foto svg { width: 100%; height: 100%; display: block; }
-  .tag { position: absolute; top: 14px; left: 14px; background: #fff; border-radius: 99px; padding: 4px 12px; font-size: 14px; font-weight: 700; }
-  .imovel .info { padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 6px; }
-  .imovel h3 { font-size: 24px; }
-  .imovel .local { color: var(--cinza); font-size: 16px; }
-  .imovel .dados { display: flex; gap: 16px; font-size: 15px; color: var(--cinza); margin-top: 6px; }
-  .imovel .preco { font-weight: 700; font-size: 22px; margin-top: 10px; }
+  section { padding: 104px 0 0; }
+  .titulo { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px 40px; margin-bottom: 36px; }
+  .titulo h2 { font-size: clamp(38px, 5vw, 64px); font-weight: 800; max-width: 12em; }
+  .titulo p { color: var(--cinza); max-width: 30em; }
 
-  .aereo { background: var(--verde-escuro); color: #F1EFE8; }
-  .aereo .w { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
-  .aereo h2 { font-size: clamp(34px, 4vw, 50px); }
-  .aereo p { margin-top: 18px; color: #C9D6CF; }
-  .aereo ul { margin: 24px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
-  .aereo li { padding-left: 28px; position: relative; }
-  .aereo li::before { content: ""; position: absolute; left: 0; top: 10px; width: 14px; height: 2px; background: #D9902F; }
-  .aereo .quadro { border-radius: 24px; overflow: hidden; aspect-ratio: 4 / 3; }
-  .aereo .quadro svg { width: 100%; height: 100%; display: block; }
+  /* Galeria em mosaico */
+  .bento { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: 260px 260px; gap: 12px; }
+  .bento figure { margin: 0; position: relative; border-radius: 22px; overflow: hidden; background: var(--menta); }
+  .bento img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+  .bento figure:hover img { transform: scale(1.04); }
+  @media (prefers-reduced-motion: reduce) { .bento figure:hover img { transform: none; } }
+  .bento figcaption { position: absolute; left: 14px; bottom: 14px; background: rgba(255,255,255,0.9); backdrop-filter: blur(8px); padding: 5px 12px; border-radius: 99px; font-size: 14px; font-weight: 700; }
+  .b1 { grid-row: span 2; }
+  .b2 { grid-column: span 2; }
+  .b5 { grid-column: span 2; }
 
-  .porque { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
-  .porque h3 { font-size: 26px; }
-  .porque p { margin-top: 10px; color: var(--cinza); }
+  /* Destaques */
+  .destaques { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .destaque { border: 1px solid var(--linha); border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 10px; }
+  .destaque svg { color: var(--verde); }
+  .destaque h3 { font-size: 26px; font-weight: 700; }
+  .destaque p { color: var(--cinza); }
 
-  .contato { background: var(--areia); }
-  .contato .w { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
-  .contato h2 { font-size: clamp(34px, 4vw, 50px); }
-  .contato .w > div > p { margin-top: 16px; color: var(--cinza); }
-  form { background: #fff; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 16px; }
-  label { font-weight: 600; font-size: 16px; display: flex; flex-direction: column; gap: 6px; }
-  input, select { font: inherit; font-size: 17px; padding: 12px 14px; border-radius: 12px; border: 1px solid #CFC6B3; min-height: 48px; color: var(--tinta); background: #fff; }
+  /* Vista de cima */
+  .aereo { margin-top: 104px; background: var(--tinta); color: #EEF3F1; border-radius: var(--raio); padding: 0; overflow: hidden; display: grid; grid-template-columns: 0.9fr 1.1fr; }
+  .aereo img { width: 100%; height: 100%; min-height: 520px; object-fit: cover; }
+  .aereo-texto { padding: 56px; display: flex; flex-direction: column; justify-content: center; gap: 18px; }
+  .aereo h2 { font-size: clamp(36px, 4.4vw, 58px); font-weight: 800; }
+  .aereo p { color: #B9C8C3; }
+  .aereo ul { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+  .aereo li { display: flex; gap: 12px; align-items: baseline; }
+  .aereo li::before { content: ""; flex: none; width: 10px; height: 10px; border-radius: 50%; background: var(--sol); transform: translateY(-1px); }
+
+  /* Localização */
+  .local { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .mapa { border-radius: 24px; min-height: 380px; background: var(--menta); position: relative; overflow: hidden; }
+  .mapa svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .distancias { border: 1px solid var(--linha); border-radius: 24px; padding: 12px 28px; }
+  .distancias div { display: flex; justify-content: space-between; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--linha); }
+  .distancias div:last-child { border-bottom: 0; }
+  .distancias b { font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; }
+
+  /* Agendar visita */
+  .visita { margin: 104px 0 0; background: var(--verde); color: #fff; border-radius: var(--raio); padding: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+  .visita h2 { font-size: clamp(38px, 4.6vw, 60px); font-weight: 800; }
+  .visita > div > p { margin-top: 16px; color: #CFE5DC; }
+  .corretor { margin-top: 32px; display: flex; align-items: center; gap: 14px; }
+  .avatar { width: 56px; height: 56px; border-radius: 50%; background: var(--sol); color: var(--tinta); display: flex; align-items: center; justify-content: center; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 20px; }
+  .corretor small { display: block; color: #CFE5DC; font-size: 15px; }
+  form { background: #fff; color: var(--tinta); border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 14px; }
+  label { font-weight: 600; font-size: 15px; display: flex; flex-direction: column; gap: 6px; }
+  input, select { font: inherit; font-size: 17px; padding: 12px 16px; border-radius: 14px; border: 1px solid var(--linha); min-height: 50px; color: var(--tinta); background: #F8FAF9; }
+  .linha2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .nota { font-size: 14px; color: var(--cinza); }
 
-  footer { padding: 32px 0; font-size: 15px; color: var(--cinza); }
+  footer { padding: 48px 0 40px; font-size: 15px; color: var(--cinza); }
   footer .w { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
 
-  @media (max-width: 900px) {
-    .hero .w, .aereo .w, .contato .w { grid-template-columns: 1fr; gap: 40px; }
-    .imoveis { grid-template-columns: 1fr 1fr; }
-    .porque { grid-template-columns: 1fr; gap: 28px; }
+  .barra-celular { display: none; }
+
+  @media (max-width: 960px) {
+    .nav-links { display: none; }
+    .fatos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; grid-auto-rows: 220px; grid-auto-flow: dense; }
+    .b1 { grid-row: span 2; } .b2 { grid-column: span 2; } .b5 { grid-column: span 2; }
+    .destaques { grid-template-columns: 1fr; }
+    .aereo { grid-template-columns: 1fr; }
+    .aereo img { min-height: 320px; max-height: 420px; }
+    .aereo-texto { padding: 36px 28px; }
+    .local { grid-template-columns: 1fr; }
+    .mapa { min-height: 260px; }
+    .visita { grid-template-columns: 1fr; padding: 36px 24px; gap: 32px; }
   }
   @media (max-width: 600px) {
-    section { padding: 64px 0; }
-    .imoveis { grid-template-columns: 1fr; }
-    header .btn { display: none; }
-    .hero .acoes .btn { width: 100%; }
+    body { padding-bottom: 84px; }
+    .hero-conteudo { padding: 24px; }
+    .hero-foto { min-height: 640px; }
+    .preco { width: 100%; }
+    .fatos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    section { padding-top: 72px; }
+    .aereo, .visita { margin-top: 72px; }
+    .bento { grid-auto-rows: 170px; }
+    .linha2 { grid-template-columns: 1fr; }
+    .nav .btn { display: none; }
+    .barra-celular { display: flex; position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 50; gap: 10px; padding: 10px; border-radius: 99px; background: rgba(255,255,255,0.92); backdrop-filter: blur(14px); border: 1px solid var(--linha); box-shadow: 0 10px 30px rgba(15,31,27,0.16); }
+    .barra-celular .btn { flex: 1; min-height: 48px; padding: 0 16px; }
   }
 </style>
 </head>
@@ -107,124 +159,155 @@
 
 <div class="demo" role="note">
   <div class="w">
-    <span><b>Exemplo</b> criado pela Lima Digital. A Horizonte Imóveis é uma empresa fictícia.</span>
+    <span><b>Exemplo</b> criado pela Lima Digital com fotos de drone reais. Imobiliária, anúncio e valores são fictícios.</span>
     <a href="../index.html#exemplos">Voltar para a Lima Digital</a>
   </div>
 </div>
 
-<header>
-  <div class="w">
+<nav class="nav" aria-label="Principal">
+  <div class="nav-in">
     <a class="logo" href="#">
-      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="17" fill="#1F5C4A"/><path d="M5 22h24" stroke="#EDE6D8" stroke-width="2"/><path d="M10 22a7 7 0 0 1 14 0" fill="#D9902F"/></svg>
-      Horizonte Imóveis
+      <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="15" fill="#0E5E4A"/><path d="M5 19h20" stroke="#E6EFEB" stroke-width="2"/><path d="M9 19a6 6 0 0 1 12 0" fill="#F4B860"/></svg>
+      Horizonte
     </a>
-    <a class="btn btn-verde" href="#contato">Falar com o corretor</a>
+    <div class="nav-links"><a href="#fotos">Fotos</a><a href="#detalhes">Detalhes</a><a href="#localizacao">Localização</a></div>
+    <a class="btn btn-verde" href="#visita">Agendar visita</a>
+  </div>
+</nav>
+
+<main>
+<header class="hero">
+  <div class="w">
+    <div class="hero-foto">
+      <img src="img/casa-hero.jpg" alt="Casa com telhado colonial e piscina vista de cima por drone" width="1400" height="1283">
+      <div class="hero-conteudo">
+        <div>
+          <span class="selo"><i aria-hidden="true"></i>À venda · Recreio dos Bandeirantes, Rio de Janeiro</span>
+          <h1>Casa com piscina perto da praia</h1>
+          <p>Térrea, com quintal amplo, área gourmet e piscina com hidromassagem. Conheça cada canto antes de visitar.</p>
+        </div>
+        <div class="preco">
+          <small>Valor de venda</small>
+          <strong>R$ 1.290.000</strong>
+          <a class="btn btn-sol" href="#visita">Agendar visita</a>
+        </div>
+      </div>
+    </div>
+    <div class="fatos" id="detalhes">
+      <div class="fato"><b>3</b><span>quartos, 1 suíte</span></div>
+      <div class="fato"><b>180 m²</b><span>de área construída</span></div>
+      <div class="fato"><b>600 m²</b><span>de terreno</span></div>
+      <div class="fato"><b>2</b><span>vagas cobertas</span></div>
+      <div class="fato"><b>Piscina</b><span>com hidromassagem</span></div>
+    </div>
   </div>
 </header>
 
-<main>
-<section class="hero" style="padding-top:48px">
-  <div class="w">
-    <div>
-      <h1>Sua casa em Nova Iguaçu, vista de todos os ângulos.</h1>
-      <p>Casas e apartamentos na Baixada Fluminense com fotos profissionais, vista aérea e atendimento direto com o corretor no WhatsApp.</p>
-      <div class="acoes">
-        <a class="btn btn-verde" href="#imoveis">Ver imóveis</a>
-        <a class="btn btn-linha" href="#contato">Quero vender meu imóvel</a>
-      </div>
-    </div>
-    <div class="hero-img" role="img" aria-label="Ilustração de uma casa com piscina vista de cima">
-      <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <rect width="400" height="400" fill="#6E8F5B"/>
-        <rect x="0" y="300" width="400" height="100" fill="#8A8172"/>
-        <rect x="40" y="40" width="190" height="150" fill="#B5583A"/>
-        <path d="M40 40 L135 115 L230 40 M40 190 L135 115 L230 190" stroke="#8F3F27" stroke-width="3" fill="none"/>
-        <rect x="250" y="70" width="110" height="170" rx="6" fill="#E9E3D6"/>
-        <rect x="265" y="90" width="80" height="120" rx="10" fill="#3FB3CF"/>
-        <circle cx="80" cy="250" r="26" fill="#4C6E3C"/><circle cx="160" cy="262" r="18" fill="#4C6E3C"/>
-        <rect x="190" y="200" width="40" height="100" fill="#D8CFBE"/>
-      </svg>
-    </div>
-  </div>
-</section>
-
-<div class="filtros">
-  <div class="w"><span>Buscar por:</span><span class="chip">Nova Iguaçu</span><span class="chip">Belford Roxo</span><span class="chip">Mesquita</span><span class="chip">Com piscina</span><span class="chip">Até 3 quartos</span></div>
-</div>
-
-<section id="imoveis">
+<section id="fotos">
   <div class="w">
     <div class="titulo">
-      <h2>Imóveis em destaque</h2>
-      <p>Todos com fotos profissionais e vídeo aéreo para você conhecer antes da visita.</p>
+      <h2>Veja a casa de todos os ângulos</h2>
+      <p>Fotos feitas com drone mostram o tamanho real do terreno, a área de lazer e o que tem ao redor.</p>
     </div>
-    <div class="imoveis">
-      <article class="imovel">
-        <div class="foto"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#7C9A66"/><rect x="40" y="40" width="200" height="140" fill="#B5583A"/><path d="M40 40 L140 110 L240 40 M40 180 L140 110 L240 180" stroke="#8F3F27" stroke-width="3" fill="none"/><rect x="270" y="60" width="90" height="140" rx="8" fill="#3FB3CF"/></svg><span class="tag">Venda</span></div>
-        <div class="info"><h3>Casa com piscina</h3><span class="local">Jardim Tropical, Nova Iguaçu</span><span class="dados"><span>3 quartos</span><span>180 m²</span><span>2 vagas</span></span><span class="preco">R$ 650.000</span></div>
-      </article>
-      <article class="imovel">
-        <div class="foto"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#9AA39A"/><rect x="60" y="30" width="280" height="240" fill="#E2DCCF"/><g fill="#B9C6CC"><rect x="80" y="50" width="70" height="60"/><rect x="165" y="50" width="70" height="60"/><rect x="250" y="50" width="70" height="60"/><rect x="80" y="125" width="70" height="60"/><rect x="165" y="125" width="70" height="60"/><rect x="250" y="125" width="70" height="60"/></g><rect x="170" y="200" width="60" height="70" fill="#1F5C4A"/></svg><span class="tag">Aluguel</span></div>
-        <div class="info"><h3>Apartamento 2 quartos</h3><span class="local">Centro, Belford Roxo</span><span class="dados"><span>2 quartos</span><span>64 m²</span><span>1 vaga</span></span><span class="preco">R$ 1.400/mês</span></div>
-      </article>
-      <article class="imovel">
-        <div class="foto"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#8BA36F"/><rect x="30" y="200" width="340" height="40" fill="#A99C82"/><rect x="70" y="50" width="150" height="120" fill="#C9785A"/><path d="M70 50 L145 110 L220 50" stroke="#9C5440" stroke-width="3" fill="none"/><circle cx="290" cy="90" r="40" fill="#5E7F49"/><circle cx="320" cy="150" r="24" fill="#5E7F49"/></svg><span class="tag">Venda</span></div>
-        <div class="info"><h3>Sítio com área verde</h3><span class="local">Tinguá, Nova Iguaçu</span><span class="dados"><span>4 quartos</span><span>2.000 m²</span><span>Pomar</span></span><span class="preco">R$ 480.000</span></div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="aereo">
-  <div class="w">
-    <div class="quadro" role="img" aria-label="Ilustração de um terreno visto de cima por drone">
-      <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#5E7F49"/><path d="M0 220 Q200 180 400 230 L400 300 L0 300 Z" fill="#7A6E5C"/><rect x="120" y="60" width="160" height="110" fill="#B5583A"/><path d="M120 60 L200 115 L280 60" stroke="#8F3F27" stroke-width="3" fill="none"/><circle cx="60" cy="80" r="30" fill="#4C6E3C"/><circle cx="340" cy="110" r="36" fill="#4C6E3C"/><g stroke="#FFFFFF" stroke-width="3" fill="none"><path d="M20 20h30M20 20v30M380 20h-30M380 20v30M20 280h30M20 280v-30M380 280h-30M380 280v-30"/></g></svg>
-    </div>
-    <div>
-      <h2>Veja de cima antes de visitar</h2>
-      <p>Cada imóvel tem vídeo feito com drone. Você vê o tamanho do terreno, a rua e o que tem por perto sem sair de casa.</p>
-      <ul>
-        <li>Tamanho real do terreno e do quintal</li>
-        <li>Acesso, rua e vizinhança</li>
-        <li>Distância até comércio, escola e transporte</li>
-      </ul>
+    <div class="bento">
+      <figure class="b1"><img src="img/casa-aerea.jpg" alt="Terreno inteiro visto de cima" loading="lazy"><figcaption>Terreno inteiro</figcaption></figure>
+      <figure class="b2"><img src="img/casa-piscina.jpg" alt="Área da piscina com espreguiçadeiras" loading="lazy"><figcaption>Área da piscina</figcaption></figure>
+      <figure class="b3"><img src="img/casa-jardim.jpg" alt="Jardim com coqueiros e área coberta" loading="lazy"><figcaption>Jardim</figcaption></figure>
+      <figure class="b4"><img src="img/casa-telhado.jpg" alt="Telhado colonial em bom estado visto de cima" loading="lazy"><figcaption>Telhado</figcaption></figure>
+      <figure class="b5"><img src="img/casa-hero.jpg" alt="Casa e quintal vistos de cima" loading="lazy" style="object-position: 30% 80%"><figcaption>Quintal</figcaption></figure>
     </div>
   </div>
 </section>
 
 <section>
   <div class="w">
-    <div class="titulo"><h2>Por que comprar com a Horizonte</h2></div>
-    <div class="porque">
-      <div><h3>Corretor de verdade</h3><p>Você fala direto com quem conhece o imóvel, pelo WhatsApp, sem robô.</p></div>
-      <div><h3>Documentação conferida</h3><p>Antes de anunciar, a documentação é revisada para a compra não travar no cartório.</p></div>
-      <div><h3>Visita marcada na hora</h3><p>Escolha o dia e o horário e receba a localização no celular.</p></div>
+    <div class="titulo"><h2>Por que essa casa</h2></div>
+    <div class="destaques">
+      <div class="destaque">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 18c2 0 2-2 4.5-2S10 18 12 18s2.5-2 4.5-2 2.5 2 4.5 2"/><path d="M3 13c2 0 2-2 4.5-2S10 13 12 13s2.5-2 4.5-2 2.5 2 4.5 2"/></svg>
+        <h3>Lazer em casa</h3>
+        <p>Piscina com hidro, deck com espreguiçadeiras e espaço para a família toda.</p>
+      </div>
+      <div class="destaque">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 22V12"/><path d="M12 12C12 7 8 4 4 4c0 4 3 8 8 8z"/><path d="M12 12c0-4 3-7 7-7 0 4-3 7-7 7z"/></svg>
+        <h3>Quintal de verdade</h3>
+        <p>Gramado amplo com coqueiros: dá para ampliar, fazer horta ou receber amigos.</p>
+      </div>
+      <div class="destaque">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>
+        <h3>Tudo térreo</h3>
+        <p>Sem escadas dentro de casa, ótimo para crianças e para quem tem mais idade.</p>
+      </div>
+    </div>
+
+    <div class="aereo">
+      <img src="img/casa-telhado.jpg" alt="Telhado da casa visto de cima por drone" loading="lazy">
+      <div class="aereo-texto">
+        <h2>Inspecionada de cima</h2>
+        <p>Antes do anúncio, o telhado e o terreno foram registrados com drone. Você vê o estado real da casa, sem surpresas na visita.</p>
+        <ul>
+          <li>Telhado registrado em detalhe, de cima</li>
+          <li>Muros e limites do terreno bem definidos</li>
+          <li>Vídeo aéreo completo enviado no WhatsApp</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="contato" id="contato">
+<section id="localizacao">
   <div class="w">
-    <div>
-      <h2>Fale com um corretor</h2>
-      <p>Conte o que você procura. Respondemos no mesmo dia pelo WhatsApp.</p>
+    <div class="titulo"><h2>Perto do que importa</h2><p>Endereço completo enviado após o agendamento da visita.</p></div>
+    <div class="local">
+      <div class="mapa" role="img" aria-label="Mapa ilustrativo do bairro">
+        <svg viewBox="0 0 600 380" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="600" height="380" fill="#E6EFEB"/>
+          <path d="M0 300 C150 270 300 330 600 280 L600 380 L0 380Z" fill="#BFE0EF"/>
+          <path d="M0 290 C150 262 300 322 600 272" stroke="#F1E3C6" stroke-width="18" fill="none"/>
+          <g stroke="#FFFFFF" stroke-width="10" fill="none"><path d="M60 0 V260"/><path d="M250 0 V270"/><path d="M450 0 V260"/><path d="M0 80 H600"/><path d="M0 180 H600"/></g>
+          <circle cx="330" cy="130" r="16" fill="#0E5E4A"/><circle cx="330" cy="130" r="6" fill="#fff"/>
+          <circle cx="330" cy="130" r="40" fill="#0E5E4A" opacity="0.12"/>
+        </svg>
+      </div>
+      <div class="distancias">
+        <div><span>Praia</span><b>1,2 km</b></div>
+        <div><span>Supermercado</span><b>400 m</b></div>
+        <div><span>Escola</span><b>800 m</b></div>
+        <div><span>BRT</span><b>1,5 km</b></div>
+      </div>
     </div>
-    <form onsubmit="event.preventDefault(); this.querySelector('.nota').textContent = 'Este é um formulário de demonstração: nada foi enviado.';">
-      <label>Nome<input type="text" autocomplete="name"></label>
-      <label>WhatsApp<input type="tel" autocomplete="tel"></label>
-      <label>Você quer
-        <select><option>Comprar</option><option>Alugar</option><option>Vender meu imóvel</option></select>
-      </label>
-      <button class="btn btn-verde" type="submit">Quero ser atendido</button>
-      <p class="nota" aria-live="polite">Formulário de demonstração.</p>
-    </form>
   </div>
 </section>
+
+<div class="w">
+  <section class="visita" id="visita">
+    <div>
+      <h2>Agende sua visita</h2>
+      <p>Escolha o melhor dia. O corretor confirma pelo WhatsApp e envia o vídeo aéreo completo.</p>
+      <div class="corretor"><span class="avatar" aria-hidden="true">MC</span><div><b>Marina Costa</b><small>Corretora · Horizonte Imóveis</small></div></div>
+    </div>
+    <form onsubmit="event.preventDefault(); this.querySelector('.nota').textContent = 'Formulário de demonstração: nada foi enviado.';">
+      <label>Nome<input type="text" autocomplete="name"></label>
+      <label>WhatsApp<input type="tel" autocomplete="tel"></label>
+      <div class="linha2">
+        <label>Dia<select><option>Sábado</option><option>Domingo</option><option>Dia de semana</option></select></label>
+        <label>Período<select><option>Manhã</option><option>Tarde</option></select></label>
+      </div>
+      <button class="btn btn-verde" type="submit">Quero visitar</button>
+      <p class="nota" aria-live="polite">Formulário de demonstração.</p>
+    </form>
+  </section>
+</div>
 </main>
 
 <footer>
-  <div class="w"><span>Horizonte Imóveis · empresa fictícia</span><span>Site de exemplo feito pela <a href="../index.html">Lima Digital</a></span></div>
+  <div class="w"><span>Horizonte Imóveis · empresa fictícia</span><span>Landing page de exemplo feita pela <a href="../index.html">Lima Digital</a></span></div>
 </footer>
+
+<div class="barra-celular">
+  <a class="btn btn-verde" href="#visita">Agendar visita</a>
+  <a class="btn btn-claro" href="#fotos" style="border: 1px solid var(--linha)">Ver fotos</a>
+</div>
 
 </body>
 </html>
