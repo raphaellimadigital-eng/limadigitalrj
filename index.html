@@ -10,17 +10,70 @@
 <link rel="canonical" href="https://limadigitalrj.com.br/">
 <meta property="og:url" content="https://limadigitalrj.com.br/">
 <meta property="og:image" content="https://limadigitalrj.com.br/img/compartilhar.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Lima Digital: sua marca, vista do melhor ângulo. Sites, Instagram, tráfego pago, fotografia e drone.">
+<meta property="og:site_name" content="Lima Digital">
+<meta name="twitter:card" content="summary_large_image">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta name="theme-color" content="#0F0F10">
+<script>
+  /* Aplica o tema escolhido antes de desenhar a página (evita piscar) */
+  try { if (localStorage.getItem('ld-tema') === 'claro') document.documentElement.setAttribute('data-tema', 'claro'); } catch (e) {}
+</script>
 <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Unbounded:wght@800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500;600;700&display=swap">
+<!-- Fontes dos títulos das miniaturas dos exemplos: carrega só as letras usadas nesses dois títulos -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Unbounded:wght@800&text=Casa%20com%20piscina%20perto%20da%20praiaUm%20fim%20de%20semana%20para%20recome%C3%A7ar&display=swap">
 <link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Lima Digital",
+  "description": "Sites e landing pages, gestão de Instagram, tráfego pago, fotografia, drone e criativos para anúncio no Rio de Janeiro e na Baixada Fluminense.",
+  "url": "https://limadigitalrj.com.br/",
+  "logo": "https://limadigitalrj.com.br/img/icone-512.png",
+  "image": "https://limadigitalrj.com.br/img/compartilhar.jpg",
+  "telephone": "+55 21 98223-2973",
+  "email": "raphaellima.digital@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "RJ",
+    "addressCountry": "BR"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Rio de Janeiro"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Baixada Fluminense"
+    }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/ld_limadigital/"
+  ],
+  "knowsAbout": [
+    "Criação de sites",
+    "Landing pages",
+    "Gestão de Instagram",
+    "Tráfego pago",
+    "Fotografia",
+    "Fotografia com drone"
+  ]
+}
+</script>
 </head>
 <body>
+<!-- WhatsApp da Lima Digital: (21) 98223-2973 = wa.me/5521982232973.
+     Se o número mudar, troque em todos os links "wa.me" desta página (busque por "5521982232973"),
+     no bloco de dados estruturados lá em cima, em obrigado.html e em 404.html. -->
 
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
@@ -30,6 +83,10 @@
       <img class="marca-ld" src="img/logo-ld-96.png" alt="" width="64" height="34">
       <span class="marca-nome">Lima Digital</span>
     </a>
+    <button class="tema-btn" type="button" aria-label="Ativar tema claro">
+      <svg class="sol" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+      <svg class="lua" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+    </button>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
     </button>
@@ -57,7 +114,11 @@
       </div>
     </div>
     <figure class="visor">
-      <img src="img/hero-drone.jpg" alt="Vista aérea de Saquarema feita com drone pela Lima Digital: igreja no alto do morro, praia e mar" width="900" height="1100" onerror="this.remove()">
+      <picture>
+        <source media="(max-width: 960px)" srcset="img/hero-drone-4x3.webp" type="image/webp">
+        <source srcset="img/hero-drone-4x5.webp" type="image/webp">
+        <img src="img/hero-drone.jpg" alt="Vista aérea de Saquarema feita com drone pela Lima Digital: igreja no alto do morro, praia e mar" width="900" height="1100" fetchpriority="high">
+      </picture>
       <span class="canto c1" aria-hidden="true"></span><span class="canto c2" aria-hidden="true"></span>
       <span class="canto c3" aria-hidden="true"></span><span class="canto c4" aria-hidden="true"></span>
       <span class="mira" aria-hidden="true"></span>
@@ -82,22 +143,27 @@
       <article class="serv">
         <h3>Gestão de Instagram</h3>
         <p>Planejamento, posts e artes no padrão da sua marca, postagem e relatório todo mês.</p>
+        <a class="link serv-link" href="https://wa.me/5521982232973?text=Ol%C3%A1%21%20Quero%20um%20or%C3%A7amento%20de%20gest%C3%A3o%20de%20Instagram." target="_blank" rel="noopener">Pedir orçamento</a>
       </article>
       <article class="serv">
         <h3>Tráfego pago</h3>
         <p>Anúncios no Instagram e no Facebook levando clientes para o seu site ou WhatsApp, com acompanhamento de resultado.</p>
+        <a class="link serv-link" href="https://wa.me/5521982232973?text=Ol%C3%A1%21%20Quero%20um%20or%C3%A7amento%20de%20tr%C3%A1fego%20pago." target="_blank" rel="noopener">Pedir orçamento</a>
       </article>
       <article class="serv">
         <h3>Fotografia</h3>
         <p>Empresas, imóveis e ensaios, e cobertura de eventos corporativos e de igreja. Entrega em até 48 horas.</p>
+        <a class="link serv-link" href="https://wa.me/5521982232973?text=Ol%C3%A1%21%20Quero%20um%20or%C3%A7amento%20de%20fotografia." target="_blank" rel="noopener">Pedir orçamento</a>
       </article>
       <article class="serv">
         <h3>Drone</h3>
         <p>Fotos e vídeos aéreos de imóveis, sítios, obras e empresas, e cobertura aérea de eventos corporativos e de igreja.</p>
+        <a class="link serv-link" href="https://wa.me/5521982232973?text=Ol%C3%A1%21%20Quero%20um%20or%C3%A7amento%20de%20drone." target="_blank" rel="noopener">Pedir orçamento</a>
       </article>
       <article class="serv">
         <h3>Criativos para anúncio</h3>
         <p>Vídeos e fotos feitos para anunciar, no formato certo de cada plataforma.</p>
+        <a class="link serv-link" href="https://wa.me/5521982232973?text=Ol%C3%A1%21%20Quero%20um%20or%C3%A7amento%20de%20criativos%20para%20an%C3%BAncio." target="_blank" rel="noopener">Pedir orçamento</a>
       </article>
       <article class="serv serv-breve">
         <h3>Perfil da Empresa no Google</h3>
@@ -119,7 +185,7 @@
         <div class="janela janela-imob" aria-hidden="true">
           <div class="janela-barra"><i></i><i></i><i></i></div>
           <div class="mini-foto mini-imob">
-            <img src="exemplos/img/casa-hero.jpg" alt="" loading="lazy">
+            <picture><source srcset="exemplos/img/casa-thumb.webp" type="image/webp"><img src="exemplos/img/casa-thumb.jpg" alt="" loading="lazy" width="900" height="825"></picture>
             <span class="mini-marca">Horizonte · Recreio, RJ</span>
             <span class="mini-titulo">Casa com piscina perto da praia</span>
             <span class="mini-botao">Agendar visita</span>
@@ -135,7 +201,7 @@
         <div class="janela janela-conf" aria-hidden="true">
           <div class="janela-barra"><i></i><i></i><i></i></div>
           <div class="mini-foto mini-conf">
-            <img src="exemplos/img/culto-hero.jpg" alt="" loading="lazy">
+            <picture><source srcset="exemplos/img/culto-thumb.webp" type="image/webp"><img src="exemplos/img/culto-thumb.jpg" alt="" loading="lazy" width="1000" height="666"></picture>
             <span class="mini-marca">Renovo · 13 a 15 de março</span>
             <span class="mini-titulo">Um fim de semana para recomeçar</span>
             <span class="mini-botao">Fazer inscrição</span>
@@ -151,27 +217,53 @@
   </div>
 </section>
 
-<section class="secao" id="trabalhos" aria-labelledby="t-trabalhos">
+<section class="secao" id="clientes" aria-labelledby="t-clientes">
+  <div class="largura">
+    <div class="cabeca">
+      <h2 id="t-clientes">Quem já trabalha com a Lima Digital</h2>
+      <p>Perfis que a gente planeja e cuida no Instagram.</p>
+    </div>
+    <ul class="clientes-lista">
+      <li>
+        <a class="cliente" href="https://www.instagram.com/cticrossbox/" target="_blank" rel="noopener">
+          <span class="cliente-avatar" aria-hidden="true"><span>CTI</span><img src="img/cliente-cti.webp" alt="" width="240" height="240" loading="lazy"></span>
+          <span class="cliente-nome">CTI CrossBox</span>
+          <span class="cliente-seg">Box de cross training · Belford Roxo</span>
+          <span class="cliente-rodape"><span class="cliente-tag">Instagram</span><span class="cliente-handle">@cticrossbox <span aria-hidden="true">↗</span></span></span>
+        </a>
+      </li>
+      <li>
+        <a class="cliente" href="https://www.instagram.com/torcida_fla_sao_jose/" target="_blank" rel="noopener">
+          <span class="cliente-avatar" aria-hidden="true"><span>FSJ</span><img src="img/cliente-fla-sao-jose.webp" alt="" width="240" height="240" loading="lazy"></span>
+          <span class="cliente-nome">Torcida Fla São José</span>
+          <span class="cliente-seg">Torcida · Belford Roxo</span>
+          <span class="cliente-rodape"><span class="cliente-tag">Instagram</span><span class="cliente-handle">@torcida_fla_sao_jose <span aria-hidden="true">↗</span></span></span>
+        </a>
+      </li>
+      <li>
+        <a class="cliente" href="https://www.instagram.com/ele_reina.oficial/" target="_blank" rel="noopener">
+          <span class="cliente-avatar" aria-hidden="true"><span>ER</span><img src="img/cliente-ele-reina.webp" alt="" width="240" height="240" loading="lazy"></span>
+          <span class="cliente-nome">Ele Reina</span>
+          <span class="cliente-seg">Conteúdo cristão</span>
+          <span class="cliente-rodape"><span class="cliente-tag">Instagram</span><span class="cliente-handle">@ele_reina.oficial <span aria-hidden="true">↗</span></span></span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="secao secao-divisa" id="trabalhos" aria-labelledby="t-trabalhos">
   <div class="largura">
     <div class="cabeca">
       <h2 id="t-trabalhos">Trabalhos com drone</h2>
       <p>Imagens aéreas que mostram o tamanho, o andamento e o estado de cada lugar.</p>
     </div>
     <div class="galeria">
-      <figure class="foto foto-alta"><img src="img/galeria-drone.jpg" alt="Casa com piscina fotografada de cima com drone" loading="lazy" onerror="this.remove()"><figcaption>Drone · imóvel</figcaption></figure>
-      <figure class="foto foto-larga"><img src="img/galeria-obra.jpg" alt="Obra fotografada de cima com drone: terraplenagem, máquina e áreas demarcadas" loading="lazy" onerror="this.remove()"><figcaption>Drone · acompanhamento de obra</figcaption></figure>
-      <figure class="foto foto-larga"><img src="img/galeria-telhado.jpg" alt="Telhado visto de cima com drone para inspeção, com caixas d'água ao lado" style="object-position: 56% 50%" loading="lazy" onerror="this.remove()"><figcaption>Drone · inspeção de telhado</figcaption></figure>
+      <figure class="foto foto-alta"><picture><source srcset="img/galeria-drone-480.webp 480w, img/galeria-drone-760.webp 760w" sizes="(max-width: 600px) 100vw, 380px" type="image/webp"><img src="img/galeria-drone.jpg" alt="Casa com piscina fotografada de cima com drone" loading="lazy" width="840" height="1400"></picture><figcaption>Drone · imóvel</figcaption></figure>
+      <figure class="foto foto-larga"><picture><source srcset="img/galeria-obra-700.webp 700w, img/galeria-obra-1000.webp 1000w, img/galeria-obra-1400.webp 1400w" sizes="(max-width: 600px) 100vw, (max-width: 1180px) 66vw, 760px" type="image/webp"><img src="img/galeria-obra.jpg" alt="Obra fotografada de cima com drone: terraplenagem, máquina e áreas demarcadas" loading="lazy" width="1400" height="788"></picture><figcaption>Drone · acompanhamento de obra</figcaption></figure>
+      <figure class="foto foto-larga"><picture><source srcset="img/galeria-telhado-700.webp 700w, img/galeria-telhado-1000.webp 1000w, img/galeria-telhado-1500.webp 1500w" sizes="(max-width: 600px) 100vw, (max-width: 1180px) 66vw, 760px" type="image/webp"><img src="img/galeria-telhado.jpg" alt="Telhado visto de cima com drone para inspeção, com caixas d'água ao lado" style="object-position: 56% 50%" loading="lazy" width="1500" height="600"></picture><figcaption>Drone · inspeção de telhado</figcaption></figure>
     </div>
     <a class="galeria-cta" href="https://wa.me/5521982232973?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20de%20drone%20ou%20fotografia." target="_blank" rel="noopener"><span>Imóvel, obra, telhado ou evento: precisa de imagens assim?</span><b>Pedir orçamento de drone ou foto</b></a>
-
-    <div class="clientes">
-      <h3>Clientes que confiam na Lima Digital</h3>
-      <ul>
-        <li><a href="https://www.instagram.com/cticrossbox/" target="_blank" rel="noopener"><img src="img/cliente-cti.png" alt="" onerror="this.remove()"><span>CTI CrossBox</span></a></li>
-        <li><a href="https://www.instagram.com/torcida_fla_sao_jose/" target="_blank" rel="noopener"><img src="img/cliente-fla-sao-jose.png" alt="" onerror="this.remove()"><span>Torcida Fla São José</span></a></li>
-        <li><a href="https://www.instagram.com/ele_reina.oficial/" target="_blank" rel="noopener"><img src="img/cliente-ele-reina.png" alt="" onerror="this.remove()"><span>Ele Reina</span></a></li>
-      </ul>
-    </div>
   </div>
 </section>
 
@@ -255,10 +347,33 @@
 </main>
 
 <footer class="rodape">
-  <div class="largura rodape-in">
-    <img class="marca-ld" src="img/logo-ld-96.png" alt="" width="64" height="34">
-    <p>Lima Digital · Rio de Janeiro e Baixada Fluminense</p>
-    <p>© 2026 Lima Digital</p>
+  <div class="largura rodape-grade">
+    <div class="rodape-marca">
+      <a class="marca" href="#inicio" aria-label="Lima Digital, voltar ao início">
+        <img class="marca-ld" src="img/logo-ld-96.png" alt="" width="64" height="34">
+        <span class="marca-nome">Lima Digital</span>
+      </a>
+      <p>Sites, Instagram, tráfego pago, fotografia e drone para negócios e eventos no Rio de Janeiro e na Baixada Fluminense.</p>
+    </div>
+    <nav class="rodape-col" aria-label="Rodapé">
+      <h2>Navegação</h2>
+      <a href="#servicos">Serviços</a>
+      <a href="#exemplos">Exemplos de sites</a>
+      <a href="#clientes">Clientes</a>
+      <a href="#trabalhos">Trabalhos com drone</a>
+      <a href="#duvidas">Perguntas frequentes</a>
+    </nav>
+    <div class="rodape-col">
+      <h2>Contato</h2>
+      <a href="https://wa.me/5521982232973?text=Ol%C3%A1%2C%20Lima%20Digital!" target="_blank" rel="noopener">WhatsApp (21) 98223-2973</a>
+      <a href="https://www.instagram.com/ld_limadigital/" target="_blank" rel="noopener">Instagram @ld_limadigital</a>
+      <a href="mailto:raphaellima.digital@gmail.com">raphaellima.digital@gmail.com</a>
+    </div>
+  </div>
+  <div class="largura rodape-base">
+    <p>© 2026 Lima Digital · Rio de Janeiro, RJ</p>
+    <!-- Quando quiser mostrar o CNPJ do MEI, apague as marcas de comentário desta linha e coloque o número:
+    <p>CNPJ 00.000.000/0001-00</p> -->
   </div>
 </footer>
 
@@ -274,9 +389,39 @@
     btn.setAttribute('aria-expanded', aberto);
     btn.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
   });
-  menu.querySelectorAll('a').forEach(function (a) {
-    a.addEventListener('click', function () { menu.classList.remove('aberto'); btn.setAttribute('aria-expanded', false); });
+  var temaBtn = document.querySelector('.tema-btn');
+  var corTopo = document.querySelector('meta[name="theme-color"]');
+  function aplicarTema(claro) {
+    if (claro) document.documentElement.setAttribute('data-tema', 'claro');
+    else document.documentElement.removeAttribute('data-tema');
+    temaBtn.setAttribute('aria-label', claro ? 'Ativar tema escuro' : 'Ativar tema claro');
+    corTopo.setAttribute('content', claro ? '#F6F4EF' : '#0F0F10');
+  }
+  aplicarTema(document.documentElement.getAttribute('data-tema') === 'claro');
+  temaBtn.addEventListener('click', function () {
+    var claro = document.documentElement.getAttribute('data-tema') !== 'claro';
+    aplicarTema(claro);
+    try { localStorage.setItem('ld-tema', claro ? 'claro' : 'escuro'); } catch (e) {}
   });
+
+  function fecharMenu(devolverFoco) {
+    if (!menu.classList.contains('aberto')) return;
+    menu.classList.remove('aberto');
+    btn.setAttribute('aria-expanded', false);
+    btn.setAttribute('aria-label', 'Abrir menu');
+    if (devolverFoco) btn.focus();
+  }
+  menu.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { fecharMenu(false); });
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fecharMenu(true); });
+  document.addEventListener('click', function (e) { if (!menu.contains(e.target) && !btn.contains(e.target)) fecharMenu(false); });
 </script>
+
+<!-- Estatísticas de visitas (Cloudflare Web Analytics, grátis e sem cookies).
+     Para ligar: crie a conta em dash.cloudflare.com > Web Analytics > Add a site > limadigitalrj.com.br,
+     copie o token que aparecer e cole no lugar de SEU_TOKEN. Depois apague as marcas de comentário.
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "SEU_TOKEN"}'></script>
+-->
 </body>
 </html>

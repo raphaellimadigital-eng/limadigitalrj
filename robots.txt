@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://limadigitalrj.com.br/sitemap.xml

@@ -7,18 +7,81 @@
 <meta name="robots" content="noindex">
 <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family=Barlow:wght@400;700&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="css/style.css">
+<style>
+  .ok { min-height: calc(100vh - 73px); display: flex; align-items: center; padding: 56px 0 72px; }
+  .ok-in { max-width: 920px; margin: 0 auto; padding: 0 24px; width: 100%; }
+  .ok-cartao { position: relative; background: var(--grafite); border: 1px solid var(--linha); border-radius: var(--raio-g); padding: 56px 56px 48px; overflow: hidden; }
+  .ok-cartao::before { content: ""; position: absolute; inset: 0; background: radial-gradient(600px 260px at 12% 0%, rgba(254,106,0,0.16), transparent 70%); pointer-events: none; }
+  .ok-cartao > * { position: relative; }
+  .ok-topo { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  .ok-check { flex: none; width: 64px; height: 64px; border-radius: 50%; background: var(--laranja); color: var(--preto); display: flex; align-items: center; justify-content: center; animation: surgir .5s ease-out both; }
+  .ok-check svg { width: 32px; height: 32px; }
+  .ok-check path { stroke-dasharray: 30; stroke-dashoffset: 30; animation: tracar .45s .3s ease-out forwards; }
+  .ok-rec { display: inline-flex; align-items: center; gap: 8px; font-family: var(--titulo); font-weight: 700; font-size: 16px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cinza); }
+  .ok-rec i { width: 9px; height: 9px; border-radius: 50%; background: var(--laranja); }
+  .ok h1 { margin-top: 28px; font-size: clamp(46px, 7.4vw, 88px); text-transform: uppercase; line-height: 0.9; }
+  .ok h1 span { color: var(--laranja); }
+  .ok-sub { margin-top: 20px; font-size: 20px; color: #CFCDC8; max-width: 34em; }
+  .ok-passos { list-style: none; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .ok-passos li { border-top: 2px solid var(--linha); padding-top: 16px; display: flex; flex-direction: column; gap: 4px; }
+  .ok-passos li:first-child { border-top-color: var(--laranja); }
+  .ok-passos b { font-family: var(--titulo); font-size: 15px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--laranja); }
+  .ok-passos strong { font-size: 18px; }
+  .ok-passos span { font-size: 16px; color: var(--cinza); }
+  .ok-botoes { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 14px; }
+  .ok-extra { margin-top: 28px; font-size: 16px; color: var(--cinza); }
+  @keyframes surgir { from { transform: scale(.6); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  @keyframes tracar { to { stroke-dashoffset: 0; } }
+  @media (prefers-reduced-motion: reduce) { .ok-check, .ok-check path { animation: none; stroke-dashoffset: 0; } }
+  @media (max-width: 700px) {
+    .ok { padding: 28px 0 48px; align-items: flex-start; }
+    .ok-in { padding: 0 16px; }
+    .ok-cartao { padding: 40px 24px 32px; }
+    .ok-passos { grid-template-columns: 1fr; gap: 16px; }
+    .ok-botoes .btn { flex: 1 1 100%; }
+  }
+</style>
 </head>
 <body>
-<main class="secao">
-  <div class="largura largura-texto" style="display:flex;flex-direction:column;gap:24px;min-height:70vh;justify-content:center">
-    <img class="marca-ld" src="img/logo-ld-96.png" alt="" width="64" height="34">
-    <h1 style="font-size:clamp(48px,8vw,88px);text-transform:uppercase">Mensagem enviada.</h1>
-    <p style="font-size:20px;color:#CFCDC8">Obrigado pelo contato. A Lima Digital responde em até 1 dia útil pelo WhatsApp ou e-mail que você informou.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:14px">
-      <a class="btn btn-laranja" href="index.html">Voltar ao site</a>
-      <a class="btn btn-contorno" href="https://wa.me/5521982232973?text=Ol%C3%A1%2C%20Lima%20Digital!" target="_blank" rel="noopener">Falar agora no WhatsApp</a>
+<header class="topo">
+  <div class="topo-in">
+    <a class="marca" href="index.html" aria-label="Lima Digital, página inicial">
+      <img class="marca-ld" src="img/logo-ld-96.png" alt="" width="64" height="34">
+      <span class="marca-nome">Lima Digital</span>
+    </a>
+    <a class="link" href="index.html">Voltar ao site</a>
+  </div>
+</header>
+
+<main class="ok">
+  <div class="ok-in">
+    <div class="ok-cartao">
+
+      <div class="ok-topo">
+        <div class="ok-check" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span class="ok-rec"><i aria-hidden="true"></i>Mensagem recebida</span>
+      </div>
+
+      <h1>Valeu pelo <span>contato!</span></h1>
+      <p class="ok-sub">Sua mensagem chegou certinho. A Lima Digital vai te chamar no WhatsApp que você informou em até 1 dia útil.</p>
+
+      <ol class="ok-passos" aria-label="O que acontece agora">
+        <li><b>Passo 1</b><strong>Leitura</strong><span>Entendo o seu negócio ou evento.</span></li>
+        <li><b>Passo 2</b><strong>Conversa</strong><span>Te chamo no WhatsApp para tirar dúvidas.</span></li>
+        <li><b>Passo 3</b><strong>Proposta</strong><span>Você recebe o orçamento, sem compromisso.</span></li>
+      </ol>
+
+      <div class="ok-botoes">
+        <a class="btn btn-laranja" href="https://wa.me/5521982232973?text=Ol%C3%A1%2C%20Lima%20Digital!%20Acabei%20de%20enviar%20uma%20mensagem%20pelo%20site." target="_blank" rel="noopener">Adiantar pelo WhatsApp</a>
+        <a class="btn btn-contorno" href="index.html#exemplos">Ver exemplos de sites</a>
+      </div>
+      <p class="ok-extra">Enquanto isso, acompanhe os trabalhos no Instagram: <a class="link" href="https://www.instagram.com/ld_limadigital/" target="_blank" rel="noopener">@ld_limadigital</a></p>
     </div>
   </div>
 </main>

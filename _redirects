@@ -1,0 +1,2 @@
+# Bloqueia a documentação interna para visitantes
+/doc/*  /404.html  404!
