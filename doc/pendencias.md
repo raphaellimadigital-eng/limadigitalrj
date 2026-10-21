@@ -33,4 +33,13 @@ Atualizado em 19/10/2026. Marque `[x]` quando concluir.
 - [ ] **Fotos de eventos** (corporativos e de igreja) para a página inicial, quando tiver os primeiros trabalhos.
 - [ ] **Portfólio de fotografia**, porque hoje só há trabalhos com drone.
 - [x] **Perfil da Empresa no Google** virou serviço ativo em 20/10 (site, posts e catálogo do WhatsApp).
-- [ ] **Criar e verificar o Perfil da Empresa no Google da própria Lima Digital** (business.google.com, área de atendimento sem mostrar endereço, verificação por vídeo).
+- [x] **Perfil da Empresa no Google da Lima Digital — verificado em 21/10** (nome no Google: "Lima Digital RJ")
+  - [x] Perfil criado: nome, categoria "Agência de marketing digital", telefone, site e horário
+  - [x] Verificação aprovada
+  - [x] Área de atendimento: Rio e Baixada
+  - [x] Serviços, descrição e fotos
+  - [x] Primeira publicação: "A Lima Digital chegou ao Google!"
+  - [x] Link do perfil no site (contato, rodapé e dados estruturados): https://maps.google.com/?cid=13539286264367947364 · 21/10
+  - [ ] Apagar a avaliação feita pela própria conta (o dono não pode avaliar a própria empresa)
+  - [ ] Revisar os preços dos produtos no Google (hoje: site R$ 400, Instagram R$ 500, drone R$ 500)
+  - [ ] Pedir avaliação aos 2 clientes pelo WhatsApp (link de "Solicitar avaliações")
